@@ -1,0 +1,129 @@
+{
+  "Epoxy Flooring": {
+    "overview": "Epoxy flooring is a durable, seamless, and chemical-resistant surface coating made by combining epoxy resin with a hardener. When these components react, they form a rigid plastic material that bonds strongly to concrete or other substrates, creating a glossy, protective surface.",
+    "services": {
+      "Self Leveling Epoxy Flooring": {
+        "desc": "Smooth, seamless finish ideal for cleanrooms, factories, and laboratories.",
+        "image": "/images/products/self-leveling-epoxy.jpg"
+      },
+      "Industrial Epoxy Flooring": {
+        "desc": "Heavy-duty, chemical and impact-resistant floors for manufacturing and warehouses.",
+        "image": "/images/products/industrial-epoxy.jpg"
+      },
+      "Antistatic Epoxy Flooring": {
+        "desc": "Electrostatic dissipative systems for electronics, pharma, and automotive plants.",
+        "image": "/images/products/antistatic-epoxy.jpg"
+      },
+      "Marble Epoxy Flooring": {
+        "desc": "Decorative marble-finish epoxy blends for showrooms, offices, and villas.",
+        "image": "/images/products/marble-epoxy.jpg"
+      },
+      "Bathroom Epoxy Flooring": {
+        "desc": "Waterproof, anti-slip systems ideal for washrooms and kitchens.",
+        "image": "/images/products/bathroom-epoxy.jpg"
+      }
+    }
+  },
+
+  "PU & Floor Coating": {
+    "overview": "Polyurethane (PU) flooring is a high-performance, flexible, and chemical-resistant floor coating system known for its resilience, UV stability, and comfort underfoot. It’s similar to epoxy flooring but offers better elasticity, temperature tolerance, and scratch resistance, making it suitable for environments with thermal shocks or outdoor exposure.",
+    "services": {
+      "PU Floor Coating": {
+        "desc": "Flexible, UV-stable coating suitable for indoor and outdoor applications.",
+        "image": "/images/products/pu-floor.jpg"
+      },
+      "Epoxy Floor Coating": {
+        "desc": "Seamless, high-gloss finish for commercial and industrial floors.",
+        "image": "/images/products/epoxy-floor.jpg"
+      },
+      "Garage Floor Coating": {
+        "desc": "Tough, chemical-resistant coatings for residential and industrial garages.",
+        "image": "/images/products/garage-coating.jpg"
+      },
+      "Resin Floor Coating": {
+        "desc": "Protective resin-based coatings for dustproofing and surface hardening.",
+        "image": "/images/products/resin-coating.jpg"
+      }
+    }
+  },
+
+  "Epoxy Paints": {
+    "overview": "Epoxy paint is a durable coating made from epoxy resin and a hardener, offering strong adhesion, chemical, and moisture resistance. It’s ideal for concrete floors, metal surfaces, and industrial or garage areas.",
+    "services": {
+      "Epoxy Primer Two Pack": {
+        "desc": "Corrosion-resistant primer for metal and concrete surfaces.",
+        "image": "/images/products/epoxy-primer.jpg"
+      },
+      "Epoxy Finish Paint": {
+        "desc": "Glossy, hard-wearing top coat available in custom shades.",
+        "image": "/images/products/epoxy-finish.jpg"
+      },
+      "Epoxy Metallic Paint": {
+        "desc": "Decorative metallic epoxy finish for show floors and interiors.",
+        "image": "/images/products/epoxy-metallic.jpg"
+      },
+      "Epoxy Painting Service": {
+        "desc": "End-to-end application for industrial, commercial, and residential sites.",
+        "image": "/images/products/epoxy-service.jpg"
+      },
+      "Epoxy Thinner": {
+        "desc": "Solvent for epoxy systems ensuring smooth application and consistency.",
+        "image": "/images/products/epoxy-thinner.jpg"
+      }
+    }
+  },
+
+  "Synthetic Enamel Paint": {
+    "overview": "Synthetic enamel paint is an oil-based paint that forms a hard, glossy, and durable finish once dry. Commonly used on metal, wood, and walls for both indoor and outdoor applications.",
+    "services": {
+      "Industrial Enamel Paint": {
+        "desc": "Hard-drying, chemical-resistant enamel for machinery and metal parts.",
+        "image": "/images/products/enamel-industrial.jpg"
+      },
+      "High Gloss Enamel": {
+        "desc": "Premium finish for wood, furniture, and metallic surfaces.",
+        "image": "/images/products/enamel-gloss.jpg"
+      },
+      "Epoxy Finish Garage Floor": {
+        "desc": "High-performance finish for automobile workshop floors.",
+        "image": "/images/products/garage-finish.jpg"
+      }
+    }
+  },
+
+  "Industrial Coatings": {
+    "overview": "High-performance protective coatings that resist corrosion, abrasion, and harsh chemicals.",
+    "services": {
+      "Chemical Resistant Coating": {
+        "desc": "Protects tanks, pipelines, and surfaces exposed to aggressive chemicals.",
+        "image": "/images/products/chemical-coating.jpg"
+      },
+      "Metal Epoxy Coating": {
+        "desc": "Provides long-term rust protection and mechanical durability.",
+        "image": "/images/products/metal-epoxy.jpg"
+      },
+      "Enamel Black Matt": {
+        "desc": "Industrial matte coating for metal structures and machinery.",
+        "image": "/images/products/enamel-black-matt.jpg"
+      }
+    }
+  },
+
+  "Flooring Services": {
+    "overview": "Comprehensive range of flooring services including design, application, and finishing.",
+    "services": {
+      "Epoxy Application Service": {
+        "desc": "Turnkey epoxy flooring and coating installation.",
+        "image": "/images/products/application-service.jpg"
+      },
+      "Surface Preparation": {
+        "desc": "Grinding, cleaning, and priming for optimal adhesion.",
+        "image": "/images/products/surface-prep.jpg"
+      },
+      "Re-coating and Maintenance": {
+        "desc": "Periodic inspection and surface renewal for existing floors.",
+        "image": "/images/products/recoating.jpg"
+      }
+    }
+  }
+}

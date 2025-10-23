@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Epoxy Flooring Service",
+    "price": 45,
+    "desc": "High-gloss yellow epoxy coating suitable for heavy-duty manufacturing units.",
+    "image": "/images/photo1.jpg"
+  },
+  {
+    "name": "Epoxy Flooring Service",
+    "price": 45,
+    "desc": "Smooth green-and-white epoxy finish used in cleanroom environments.",
+    "image": "/images/photo2.jpg"
+  },
+  {
+    "name": "Epoxy Flooring Service",
+    "price": 45,
+    "desc": "Metallic grey epoxy surface with premium anti-slip coating.",
+    "image": "/images/photo3.jpg"
+  },
+  {
+    "name": "Epoxy Flooring Service",
+    "price": 45,
+    "desc": "Blue line-marked epoxy flooring for production zone safety.",
+    "image": "/images/photo4.jpg"
+  },
+  {
+    "name": "Epoxy Flooring Service",
+    "price": 45,
+    "desc": "Durable epoxy with chemical resistance for factory floors.",
+    "image": "/images/photo5.jpg"
+  },
+  {
+    "name": "Epoxy Flooring Service",
+    "price": 45,
+    "desc": "Seamless resin flooring for warehouse and logistics centers.",
+    "image": "/images/photo6.jpg"
+  }
+]

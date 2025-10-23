@@ -1,0 +1,41 @@
+{
+  "projects": [
+    {
+      "title": "Automotive – Epoxy Floor",
+      "place": "Chennai",
+      "desc": "High-durability epoxy flooring designed for heavy-vehicle traffic and oil resistance in automotive assembly plants.",
+      "img": "/images/p1.jpg"
+    },
+    {
+      "title": "Textile – PU Coating",
+      "place": "Coimbatore",
+      "desc": "Seamless PU coating providing chemical and abrasion resistance for textile production areas with high humidity.",
+      "img": "/images/p2.jpg"
+    },
+    {
+      "title": "Electronics – Anti-Static",
+      "place": "Bengaluru",
+      "desc": "Conductive epoxy floor solution ensuring static control in sensitive electronic manufacturing zones.",
+      "img": "/images/p3.jpg"
+    },
+    {
+      "title": "Pharma – Hygienic Resin Floor",
+      "place": "Hyderabad",
+      "desc": "Antimicrobial resin flooring for pharmaceutical cleanrooms and processing units with HACCP compliance.",
+      "img": "/images/p4.jpg"
+    },
+    {
+      "title": "Warehouse – Epoxy Coating",
+      "place": "Pune",
+      "desc": "Industrial-grade epoxy coating providing dustproof and abrasion-resistant protection for warehouse floors.",
+      "img": "/images/p5.jpg"
+    },
+    {
+      "title": "Food & Beverage – PU Concrete",
+      "place": "Chennai",
+      "desc": "PU concrete system with temperature tolerance for wet zones and food-grade manufacturing plants.",
+      "img": "/images/p6.jpg"
+    }
+  ]
+}
+
