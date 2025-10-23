@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "veera-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "veera-frontend/dist" }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "veera-frontend/dist/$1" }
+  ]
+}
