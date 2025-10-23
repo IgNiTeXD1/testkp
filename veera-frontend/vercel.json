@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "veera-frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "veera-frontend/dist" }
-    }
-  ],
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": "dist",
+  "framework": "vite",
   "routes": [
-    { "src": "/(.*)", "dest": "veera-frontend/dist/$1" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
+
