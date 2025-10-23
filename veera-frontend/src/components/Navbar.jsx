@@ -8,8 +8,8 @@ export default function Navbar() {
 
   const links = [
     { to: "/", label: "Home" },
-    { to: "/products", label: "Products" },
-    { to: "/projects", label: "Services" },
+    { to: "/products", label: "Services" },
+    { to: "/projects", label: "Project" },
     { to: "/photos", label: "Photos" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
