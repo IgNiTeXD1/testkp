@@ -1,38 +1,107 @@
 [
   {
-    "name": "Epoxy Flooring Service",
-    "price": 45,
-    "desc": "High-gloss yellow epoxy coating suitable for heavy-duty manufacturing units.",
-    "image": "/images/photo1.jpg"
+    "name": "Industrial Warehouse Floor",
+    "desc": "High-performance epoxy flooring designed for heavy machinery zones with seamless chemical resistance and dust-proof finish.",
+    "image": "/images/gallery/warehouse-epoxy.jpg",
+    "price": 85,
+    "category": "Epoxy Flooring"
   },
   {
-    "name": "Epoxy Flooring Service",
-    "price": 45,
-    "desc": "Smooth green-and-white epoxy finish used in cleanroom environments.",
-    "image": "/images/photo2.jpg"
+    "name": "Pharma Cleanroom Coating",
+    "desc": "Antimicrobial PU coating system for pharmaceutical environments ensuring hygiene and smooth cleaning operations.",
+    "image": "/images/gallery/pharma-cleanroom.jpg",
+    "price": 95,
+    "category": "PU Coating"
   },
   {
-    "name": "Epoxy Flooring Service",
-    "price": 45,
-    "desc": "Metallic grey epoxy surface with premium anti-slip coating.",
-    "image": "/images/photo3.jpg"
+    "name": "Automotive Plant ESD Floor",
+    "desc": "Anti-static epoxy flooring installed in automotive manufacturing lines to ensure protection of sensitive electronic equipment.",
+    "image": "/images/gallery/auto-esd.jpg",
+    "price": 110,
+    "category": "ESD Flooring"
   },
   {
-    "name": "Epoxy Flooring Service",
-    "price": 45,
-    "desc": "Blue line-marked epoxy flooring for production zone safety.",
-    "image": "/images/photo4.jpg"
+    "name": "Commercial Showroom",
+    "desc": "Gloss-finish decorative epoxy flooring with high light reflection for a luxury showroom ambience.",
+    "image": "/images/gallery/commercial-showroom.jpg",
+    "price": 120,
+    "category": "Decorative Flooring"
   },
   {
-    "name": "Epoxy Flooring Service",
-    "price": 45,
-    "desc": "Durable epoxy with chemical resistance for factory floors.",
-    "image": "/images/photo5.jpg"
+    "name": "Food Processing Unit",
+    "desc": "Seamless PU floor for wet-process zones, with non-slip texture and high thermal shock resistance.",
+    "image": "/images/gallery/food-unit.jpg",
+    "price": 105,
+    "category": "PU Coating"
   },
   {
-    "name": "Epoxy Flooring Service",
-    "price": 45,
-    "desc": "Seamless resin flooring for warehouse and logistics centers.",
-    "image": "/images/photo6.jpg"
+    "name": "Electronics Assembly Area",
+    "desc": "Conductive ESD flooring that ensures electrostatic discharge protection for sensitive electronics manufacturing.",
+    "image": "/images/gallery/electronics-floor.jpg",
+    "price": 115,
+    "category": "ESD Flooring"
+  },
+  {
+    "name": "Cold Storage Facility",
+    "desc": "PU concrete flooring engineered for sub-zero environments with excellent abrasion and moisture resistance.",
+    "image": "/images/gallery/cold-storage.jpg",
+    "price": 130,
+    "category": "PU Coating"
+  },
+  {
+    "name": "Textile Factory Floor",
+    "desc": "Epoxy-coated concrete with abrasion-resistant topcoat designed to handle heavy material movement and dye spills.",
+    "image": "/images/gallery/textile-factory.jpg",
+    "price": 90,
+    "category": "Epoxy Flooring"
+  },
+  {
+    "name": "School Laboratory Floor",
+    "desc": "Chemical-resistant epoxy system ensuring easy maintenance and safety in educational laboratories.",
+    "image": "/images/gallery/school-lab.jpg",
+    "price": 80,
+    "category": "Epoxy Flooring"
+  },
+  {
+    "name": "Food Retail Outlet",
+    "desc": "Decorative self-leveling epoxy with high gloss and anti-slip topcoat, enhancing hygiene and aesthetic appeal.",
+    "image": "/images/gallery/retail-outlet.jpg",
+    "price": 100,
+    "category": "Decorative Flooring"
+  },
+  {
+    "name": "Heavy Engineering Unit",
+    "desc": "Heavy-duty epoxy mortar floor built for impact zones and forklift areas, providing superior load bearing.",
+    "image": "/images/gallery/engineering-floor.jpg",
+    "price": 95,
+    "category": "Epoxy Flooring"
+  },
+  {
+    "name": "Waterproof Roof Coating",
+    "desc": "UV-resistant polyurethane waterproofing membrane applied on industrial roofs for long-term weather protection.",
+    "image": "/images/gallery/roof-waterproofing.jpg",
+    "price": 140,
+    "category": "Waterproofing"
+  },
+  {
+    "name": "Medical Equipment Room",
+    "desc": "Anti-static and antimicrobial floor combining epoxy and PU hybrid systems for healthcare-grade applications.",
+    "image": "/images/gallery/medical-room.jpg",
+    "price": 125,
+    "category": "ESD Flooring"
+  },
+  {
+    "name": "Cold Chain Logistics Bay",
+    "desc": "PU concrete flooring engineered for cold storage and loading docks ensuring skid-free performance.",
+    "image": "/images/gallery/logistics-bay.jpg",
+    "price": 115,
+    "category": "PU Coating"
+  },
+  {
+    "name": "Airport Baggage Area",
+    "desc": "Impact and abrasion-resistant epoxy floor system designed for 24/7 operational loads and easy maintenance.",
+    "image": "/images/gallery/airport-bay.jpg",
+    "price": 110,
+    "category": "Epoxy Flooring"
   }
 ]

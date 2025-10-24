@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Photos() {
   const [photos, setPhotos] = useState([]);
   const [lightbox, setLightbox] = useState({ open: false, index: 0 });
+  const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
     fetch("/data/pho.json")
@@ -12,17 +13,27 @@ export default function Photos() {
       .catch((err) => console.error("❌ Failed to load photo data:", err));
   }, []);
 
+  const categories = useMemo(() => {
+    const cats = new Set(photos.map((p) => p.category || "Uncategorized"));
+    return ["All", ...cats];
+  }, [photos]);
+
+  const filteredPhotos = useMemo(() => {
+    if (activeCategory === "All") return photos;
+    return photos.filter((p) => p.category === activeCategory);
+  }, [photos, activeCategory]);
+
   const openLightbox = (index) => setLightbox({ open: true, index });
   const closeLightbox = () => setLightbox({ open: false, index: 0 });
   const nextPhoto = () =>
     setLightbox((prev) => ({
       ...prev,
-      index: (prev.index + 1) % photos.length,
+      index: (prev.index + 1) % filteredPhotos.length,
     }));
   const prevPhoto = () =>
     setLightbox((prev) => ({
       ...prev,
-      index: (prev.index - 1 + photos.length) % photos.length,
+      index: (prev.index - 1 + filteredPhotos.length) % filteredPhotos.length,
     }));
 
   return (
@@ -45,19 +56,40 @@ export default function Photos() {
           </p>
         </motion.div>
 
+        {/* Category Tabs */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-5 py-2.5 rounded-full border text-sm font-semibold transition-all ${
+                activeCategory === cat
+                  ? "bg-[#0b2b4a] text-white border-[#0b2b4a] shadow-md"
+                  : "bg-white text-[#0b2b4a] border-gray-200 hover:bg-gray-50"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         {/* Gallery Grid */}
-        <div
-          className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"
-          aria-label="Project gallery"
-        >
-          {photos.length === 0
-            ? Array.from({ length: 6 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="animate-pulse bg-gray-200 rounded-xl h-64"
-                />
-              ))
-            : photos.map((p, i) => (
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={activeCategory}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+            className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"
+            aria-label="Project gallery"
+          >
+            {filteredPhotos.length === 0 ? (
+              <p className="text-center text-gray-500 col-span-full mt-6">
+                No photos found for this category.
+              </p>
+            ) : (
+              filteredPhotos.map((p, i) => (
                 <motion.div
                   key={i}
                   whileHover={{ y: -4 }}
@@ -76,22 +108,22 @@ export default function Photos() {
                     <p className="text-sm text-gray-200 line-clamp-2">
                       {p.desc}
                     </p>
-                    <span className="inline-block mt-2 bg-sky-500 text-white text-xs font-medium px-3 py-1 rounded-full">
-                      ₹ {p.price} / sq ft
-                    </span>
+                    {p.price && (
+                      <span className="inline-block mt-2 bg-sky-500 text-white text-xs font-medium px-3 py-1 rounded-full">
+                        ₹ {p.price} / sq ft
+                      </span>
+                    )}
                   </div>
                 </motion.div>
-              ))}
-        </div>
-
-        {photos.length === 0 && (
-          <p className="text-center text-gray-500 mt-10">Loading photos...</p>
-        )}
+              ))
+            )}
+          </motion.div>
+        </AnimatePresence>
       </section>
 
       {/* Lightbox */}
       <AnimatePresence>
-        {lightbox.open && photos[lightbox.index] && (
+        {lightbox.open && filteredPhotos[lightbox.index] && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -108,23 +140,25 @@ export default function Photos() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={photos[lightbox.index].image}
-                alt={photos[lightbox.index].name}
+                src={filteredPhotos[lightbox.index].image}
+                alt={filteredPhotos[lightbox.index].name}
                 className="w-full object-contain max-h-[80vh]"
               />
               <div className="p-5 sm:p-6">
                 <h3 className="text-xl sm:text-2xl font-bold text-[#0b2b4a] mb-2">
-                  {photos[lightbox.index].name}
+                  {filteredPhotos[lightbox.index].name}
                 </h3>
                 <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                  {photos[lightbox.index].desc}
+                  {filteredPhotos[lightbox.index].desc}
                 </p>
-                <p className="mt-3 text-sm font-medium text-sky-700">
-                  ₹ {photos[lightbox.index].price} / sq ft
-                </p>
+                {filteredPhotos[lightbox.index].price && (
+                  <p className="mt-3 text-sm font-medium text-sky-700">
+                    ₹ {filteredPhotos[lightbox.index].price} / sq ft
+                  </p>
+                )}
               </div>
 
-              {/* Navigation Buttons */}
+              {/* Nav Buttons */}
               <button
                 onClick={prevPhoto}
                 aria-label="Previous photo"
@@ -155,6 +189,7 @@ export default function Photos() {
     </main>
   );
 }
+
 
 
 

@@ -51,7 +51,6 @@ export default function About() {
       <section className="relative h-[55vh] flex items-center justify-center text-center overflow-hidden">
         <img
           src="/images/about-hero.jpg"
-          alt="Veera Polymers workshop"
           className="absolute inset-0 w-full h-full object-cover brightness-75"
           loading="lazy"
         />
