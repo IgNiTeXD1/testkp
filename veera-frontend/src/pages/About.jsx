@@ -150,28 +150,28 @@ export default function About() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
-              name: "Ragupathi M",
+              name: "Ragupathi V",
               role: "Founder & Managing Director",
               img: "/images/team1.jpg",
               bio: "Ragupathi founded Veera Polymers with a vision to merge craftsmanship and chemistry. A hands-on leader, he believes in quality over quantity and relationships over transactions.",
             },
             {
-              name: "Priya K",
-              role: "Operations & Planning",
+              name: "name",
+              role: "role",
               img: "/images/team2.jpg",
-              bio: "Priya ensures every project runs smoothly — from materials to manpower. She’s the bridge between on-site execution and client satisfaction.",
+              bio: " desc",
             },
             {
-              name: "Karthik S",
-              role: "Quality & Application Head",
+              name: "name",
+              role: "role",
               img: "/images/team3.jpg",
-              bio: "With over a decade of industrial coating experience, Karthik oversees material testing, product improvement, and training of new teams.",
+              bio: "desc",
             },
             {
-              name: "Divya R",
-              role: "Procurement & Logistics",
+              name: "name",
+              role: "role",
               img: "/images/team4.jpg",
-              bio: "Divya manages supplier relations and ensures timely delivery of raw materials, making sure projects stay on schedule every time.",
+              bio: "desc",
             },
           ].map((t, i) => (
             <motion.div
