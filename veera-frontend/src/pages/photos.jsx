@@ -28,17 +28,28 @@ export default function Photos() {
   return (
     <main className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <section className="max-w-7xl mx-auto">
-        {/* Title */}
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-4 text-center">
-          Our Project Gallery
-        </h1>
-        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto sm:text-lg leading-relaxed">
-          Explore our recent epoxy and PU flooring projects. Every installation
-          is designed for durability, chemical resistance, and visual appeal — from industrial factories to commercial showrooms.
-        </p>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0b2b4a]">
+            Project Gallery
+          </h1>
+          <p className="text-gray-600 mt-3 max-w-3xl mx-auto sm:text-lg leading-relaxed">
+            Explore our epoxy and PU flooring installations across industries —
+            from cleanrooms to warehouses. Every floor reflects durability,
+            safety, and craftsmanship.
+          </p>
+        </motion.div>
 
-        {/* Photo Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Gallery Grid */}
+        <div
+          className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"
+          aria-label="Project gallery"
+        >
           {photos.length === 0
             ? Array.from({ length: 6 }).map((_, i) => (
                 <div
@@ -49,35 +60,25 @@ export default function Photos() {
             : photos.map((p, i) => (
                 <motion.div
                   key={i}
-                  whileHover={{ scale: 1.03 }}
-                  className="group relative bg-white rounded-xl shadow-md overflow-hidden border cursor-pointer transition-transform duration-300"
+                  whileHover={{ y: -4 }}
+                  className="relative group overflow-hidden rounded-2xl shadow-md bg-white border cursor-pointer break-inside-avoid"
                   onClick={() => openLightbox(i)}
                 >
-                  <div className="relative h-56 overflow-hidden rounded-t-xl">
-                    <img
-                      src={p.image}
-                      alt={p.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  </div>
-                  <div className="p-5 flex flex-col justify-between h-48">
-                    <div className="space-y-2">
-                      <h3 className="text-lg sm:text-xl font-semibold text-blue-900 group-hover:text-blue-700 transition-colors">
-                        {p.name}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-2 line-clamp-2">{p.desc}</p>
-                      <span className="inline-block bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">
-                        ₹ {p.price} / sq ft
-                      </span>
-                    </div>
-                    <a
-                      href="/contact"
-                      className="mt-3 inline-block text-center px-3 py-2 text-sm font-medium border border-blue-700 text-blue-700 rounded-lg hover:bg-blue-700 hover:text-white transition"
-                    >
-                      Get Quote
-                    </a>
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    loading="lazy"
+                    className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-lg font-semibold">{p.name}</h3>
+                    <p className="text-sm text-gray-200 line-clamp-2">
+                      {p.desc}
+                    </p>
+                    <span className="inline-block mt-2 bg-sky-500 text-white text-xs font-medium px-3 py-1 rounded-full">
+                      ₹ {p.price} / sq ft
+                    </span>
                   </div>
                 </motion.div>
               ))}
@@ -95,14 +96,15 @@ export default function Photos() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-6"
             onClick={closeLightbox}
           >
             <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              className="relative max-w-3xl w-full bg-white rounded-xl overflow-hidden shadow-2xl"
+              initial={{ scale: 0.9, opacity: 0.8 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0.8 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-4xl bg-white rounded-xl overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <img
@@ -110,38 +112,39 @@ export default function Photos() {
                 alt={photos[lightbox.index].name}
                 className="w-full object-contain max-h-[80vh]"
               />
-              <div className="p-5">
-                <h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-2">
+              <div className="p-5 sm:p-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#0b2b4a] mb-2">
                   {photos[lightbox.index].name}
                 </h3>
                 <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                   {photos[lightbox.index].desc}
                 </p>
-                <p className="mt-2 text-sm font-medium text-blue-700">
+                <p className="mt-3 text-sm font-medium text-sky-700">
                   ₹ {photos[lightbox.index].price} / sq ft
                 </p>
               </div>
 
-              {/* Navigation */}
+              {/* Navigation Buttons */}
               <button
                 onClick={prevPhoto}
                 aria-label="Previous photo"
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 hover:bg-white transition text-lg sm:text-xl"
+                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-3 hover:bg-white transition"
               >
                 ◀
               </button>
               <button
                 onClick={nextPhoto}
                 aria-label="Next photo"
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 hover:bg-white transition text-lg sm:text-xl"
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-3 hover:bg-white transition"
               >
                 ▶
               </button>
-              {/* Close */}
+
+              {/* Close Button */}
               <button
                 onClick={closeLightbox}
                 aria-label="Close lightbox"
-                className="absolute top-3 right-3 bg-white/80 rounded-full p-2 hover:bg-white transition font-bold text-lg sm:text-xl"
+                className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-3 hover:bg-white transition font-bold"
               >
                 ✕
               </button>
@@ -152,5 +155,6 @@ export default function Photos() {
     </main>
   );
 }
+
 
 
