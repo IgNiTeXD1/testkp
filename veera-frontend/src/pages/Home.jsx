@@ -4,89 +4,104 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0 },
   };
 
   return (
     <>
-      {/* 🧠 SEO Meta */}
+      {/* 🧠 Meta */}
       <head>
-        <title>Veera Polymers & Chemicals | Epoxy Flooring Experts in Chennai</title>
+        <title>Veera Polymers & Chemicals | Epoxy & PU Flooring Experts</title>
         <meta
           name="description"
-          content="Leading manufacturer of epoxy flooring, PU coatings, and chemical-resistant flooring. Trusted across India for durable, safe, and sustainable surfaces."
+          content="India’s trusted name for epoxy, PU and chemical-resistant flooring systems. Designed for performance, built for longevity."
         />
-        <meta
-          name="keywords"
-          content="epoxy flooring chennai, industrial floor coating, epoxy resin floor, PU coating India, Veera Polymers"
-        />
-        <meta name="robots" content="index, follow" />
       </head>
 
-      {/* 🌇 Hero Section */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <img
-          src="/images/hero-floor.jpg"
-          alt="Epoxy flooring installation"
-          className="absolute inset-0 w-full h-full object-cover brightness-75"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b2b4a]/90 via-[#0b2b4a]/70 to-transparent" />
+      {/* 🏭 Hero Section */}
+      <section className="relative bg-[#0b2b4a] text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/hero-floor.jpg"
+            alt="Industrial epoxy floor"
+            className="w-full h-full object-cover brightness-75"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b2b4a]/95 via-[#0b2b4a]/80 to-transparent" />
+        </div>
 
-        <motion.div
-          className="relative z-10 text-white px-6 max-w-3xl text-center md:text-left"
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4">
-            <span className="text-sky-400">Safer. Stronger. </span>
-            Smarter Floors.
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8">
-            Engineered epoxy and PU systems that deliver durability and performance
-            across every industrial environment.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            <Link
-              to="/products"
-              className="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-full transition-all shadow-md hover:shadow-lg"
-            >
-              Explore Solutions
-            </Link>
-            <a
-              href="/brochure/veera_brochure.pdf"
-              download
-              className="border border-white/70 text-white px-6 py-3 rounded-full hover:bg-white/10 transition-all"
-            >
-              Download Brochure
-            </a>
-          </div>
-        </motion.div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-10 items-center">
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+              <span className="text-sky-400">Durability.</span> Precision.
+              <br />
+              <span className="text-sky-400">Innovation.</span>
+            </h1>
+            <p className="mt-6 text-lg text-white/90 leading-relaxed">
+              From factories to pharma labs, Veera delivers surfaces engineered
+              for safety, strength, and sustainability — every square meter built
+              to last.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/products"
+                className="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all"
+              >
+                Explore Products
+              </Link>
+              <a
+                href="/brochure/veera_brochure.pdf"
+                download
+                className="border border-white/70 text-white px-6 py-3 rounded-full hover:bg-white/10 transition-all"
+              >
+                Download Brochure
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="hidden md:block rounded-xl overflow-hidden shadow-2xl border border-white/10"
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            <img
+              src="/images/factory-floor.jpg"
+              alt="Epoxy installation process"
+              className="object-cover w-full h-[420px]"
+              loading="lazy"
+            />
+          </motion.div>
+        </div>
       </section>
 
-      {/* 🧩 Core Highlights */}
-      <section className="max-w-7xl mx-auto px-6 -mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-20">
+      {/* 🔹 Feature Grid */}
+      <section className="max-w-7xl mx-auto px-6 py-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
           {
             title: "Epoxy Systems",
-            desc: "Seamless, durable, and chemical-resistant flooring for industrial facilities.",
+            desc: "Seamless, impact-resistant floors with tailored finishes for every industry.",
             img: "/images/epoxy-system.jpg",
             to: "/products",
           },
           {
-            title: "Industries Served",
-            desc: "Automotive, Pharma, FMCG, Electronics — we tailor flooring to your needs.",
-            img: "/images/industries.jpg",
-            to: "/projects",
+            title: "PU & Hybrid Floors",
+            desc: "Flexible and abrasion-resistant polyurethane coatings for heavy-duty areas.",
+            img: "/images/pu-floor.jpg",
+            to: "/products",
           },
           {
-            title: "Sustainability",
-            desc: "Eco-friendly, low-VOC systems ensuring safety and long service life.",
-            img: "/images/sustainable-floor.jpg",
-            to: "/about",
+            title: "ESD & Anti-Static",
+            desc: "Precision-engineered floors ensuring safety for sensitive electronic zones.",
+            img: "/images/esd-floor.jpg",
+            to: "/projects",
           },
         ].map((c, i) => (
           <motion.div
@@ -96,14 +111,13 @@ export default function Home() {
             whileInView="visible"
             transition={{ delay: i * 0.1, duration: 0.5 }}
             viewport={{ once: true }}
-            className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden border hover:-translate-y-1"
+            className="group bg-white rounded-2xl shadow-md hover:shadow-xl border border-gray-100 hover:-translate-y-1 transition-all overflow-hidden"
           >
-            <div className="h-48 overflow-hidden">
+            <div className="h-52 overflow-hidden">
               <img
                 src={c.img}
                 alt={c.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="p-6">
@@ -122,104 +136,94 @@ export default function Home() {
         ))}
       </section>
 
-      {/* 🧭 Quick Navigation */}
-      <section className="max-w-7xl mx-auto px-6 mt-20 text-center">
+      {/* 🏗️ Projects Preview */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-center mb-10 flex-wrap">
+            <h2 className="text-3xl font-bold text-[#0b2b4a]">
+              Recent Installations
+            </h2>
+            <Link
+              to="/projects"
+              className="text-sky-700 font-semibold hover:underline"
+            >
+              View All →
+            </Link>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                img: "/images/plant-bangalore.jpg",
+                h: "Bangalore Electronics Hub",
+                d: "10,000 sq.ft anti-static epoxy floor with precision finish.",
+              },
+              {
+                img: "/images/pharma-floor.jpg",
+                h: "Pharmaceutical Cleanroom",
+                d: "PU-based hygienic flooring system with antimicrobial sealant.",
+              },
+              {
+                img: "/images/fmcg-warehouse.jpg",
+                h: "FMCG Warehouse – Pune",
+                d: "High-load epoxy coating ensuring abrasion resistance and long life.",
+              },
+            ].map((n, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                transition={{ delay: i * 0.15 }}
+                viewport={{ once: true }}
+                className="rounded-2xl overflow-hidden bg-white border hover:shadow-lg hover:-translate-y-1 transition-all"
+              >
+                <img
+                  src={n.img}
+                  alt={n.h}
+                  className="h-48 w-full object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="font-semibold text-[#0b2b4a] text-lg mb-1">
+                    {n.h}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{n.d}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 🌍 CTA */}
+      <section className="bg-[#0b2b4a] py-16 text-center text-white">
         <motion.h2
-          className="text-3xl font-bold text-[#0b2b4a] mb-8"
+          className="text-3xl font-bold mb-4"
           initial="hidden"
           whileInView="visible"
           variants={fadeInUp}
         >
-          Explore Our Solutions
+          Ready to Reinforce Your Space?
         </motion.h2>
-        <div className="flex flex-wrap justify-center gap-4">
-          {[
-            { label: "Products", to: "/products" },
-            { label: "Projects", to: "/projects" },
-            { label: "About Us", to: "/about" },
-            { label: "Contact", to: "/contact" },
-          ].map((l, i) => (
-            <motion.div
-              key={l.label}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ delay: i * 0.1 }}
-            >
-              <Link
-                to={l.to}
-                className="px-6 py-3 border border-sky-500 text-sky-700 rounded-full hover:bg-sky-500 hover:text-white transition-all"
-              >
-                {l.label}
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+        <p className="text-white/80 mb-6">
+          Talk to our experts for customized flooring recommendations and site
+          inspections.
+        </p>
+        <Link
+          to="/contact"
+          className="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-lg"
+        >
+          Contact Us
+        </Link>
       </section>
 
-      {/* 📰 News & Insights */}
-      <section className="max-w-7xl mx-auto px-6 mt-20 mb-24">
-        <div className="flex justify-between items-center flex-wrap mb-6">
-          <h2 className="text-3xl font-bold text-[#0b2b4a]">Latest Updates</h2>
-          <Link
-            to="/projects"
-            className="text-sky-700 hover:underline font-semibold"
-          >
-            View All →
-          </Link>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            {
-              h: "New Anti-Static Flooring for Electronics Plant",
-              d: "Completed 10,000 sq ft epoxy system in Bangalore with ESD protection.",
-              img: "/images/news1.jpg",
-            },
-            {
-              h: "PU Coating Line Upgrade",
-              d: "Enhanced abrasion resistance and gloss retention for long-term performance.",
-              img: "/images/news2.jpg",
-            },
-            {
-              h: "Sustainability Report 2025",
-              d: "Introduced eco-grade epoxy with 35% lower VOC emissions for greener operations.",
-              img: "/images/news3.jpg",
-            },
-          ].map((n, i) => (
-            <motion.article
-              key={i}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl border overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all"
-            >
-              <div className="h-44 overflow-hidden">
-                <img
-                  src={n.img}
-                  alt={n.h}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-semibold text-[#0b2b4a] text-lg mb-2">
-                  {n.h}
-                </h3>
-                <p className="text-gray-600 text-sm">{n.d}</p>
-              </div>
-            </motion.article>
-          ))}
-        </div>
-      </section>
-
-      {/* 📞 Floating Contact Button */}
-      <Link
-        to="/contact"
-        className="fixed bottom-6 right-6 bg-sky-600 text-white rounded-full shadow-lg hover:scale-110 transition-transform p-4"
-        aria-label="Contact Us"
+      {/* 📞 Floating Contact */}
+      <motion.a
+        href="/contact"
+        className="fixed bottom-6 right-6 bg-sky-600 text-white rounded-full shadow-lg p-4 hover:scale-110 transition-transform"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -235,9 +239,10 @@ export default function Home() {
             d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z"
           />
         </svg>
-      </Link>
+      </motion.a>
     </>
   );
 }
+
 
 
