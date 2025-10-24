@@ -56,7 +56,7 @@ export default function Home() {
                 Explore Products
               </Link>
               <a
-                href="/brochure/veera_brochure.pdf"
+                href="/brochure/veera-polymer-chemicals(1).pdf"
                 download
                 className="border border-white/70 text-white px-6 py-3 rounded-full hover:bg-white/10 transition-all"
               >

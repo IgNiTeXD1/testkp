@@ -6,24 +6,30 @@ export default function About() {
 
   const content = {
     vision: {
-      title: "Our Vision",
-      text: `At Veera Polymers & Chemicals, our vision is to redefine industrial flooring through innovation, precision, and responsibility. 
-      We believe every floor should be a foundation for safety and success — from high-performance epoxy systems to sustainable PU coatings. 
-      Our goal is simple: to build India's most reliable, eco-conscious flooring solutions for the industries that move our nation.`,
+      title: "Our Story & Vision",
+      text: `Veera Polymers & Chemicals was born from a simple idea — that industrial spaces deserve the same care, safety, and attention to detail as the people who work in them.  
+      
+      What began as a small flooring service in Chennai has grown into a trusted name across India for reliable, long-lasting epoxy and PU systems.  
+      
+      Our vision is to build foundations that empower industries — floors that don't just endure time, but inspire confidence.`,
       image: "/images/vision.jpg",
     },
     infrastructure: {
-      title: "Our Infrastructure",
-      text: `Our state-of-the-art manufacturing and application facility in Chennai is designed to meet the highest global standards. 
-      Equipped with automated resin blending units, precision testing labs, and on-site project teams, we ensure unmatched consistency and performance in every application. 
-      Every system we deliver is backed by technical documentation, rigorous quality checks, and traceable material batches.`,
+      title: "Our Craft & Capability",
+      text: `Behind every smooth surface is a story of precision and teamwork.  
+      
+      Our Chennai facility houses advanced resin-blending units, quality control labs, and on-site teams trained to deliver consistent results.  
+      
+      We don’t just supply materials — we partner with clients to understand every detail, ensuring safety, sustainability, and beauty in equal measure.`,
       image: "/images/infrastructure.jpg",
     },
     credibility: {
-      title: "Credentials & Compliance",
-      text: `Veera Polymers & Chemicals is built on a foundation of trust and accountability. 
-      We operate with complete transparency, adhering to India’s industrial, environmental, and taxation norms. 
-      Our certifications, GST registration, and product codes ensure that every transaction and formulation is traceable and compliant.`,
+      title: "Trust, Transparency & Compliance",
+      text: `We’ve built Veera Polymers on three values: honesty, traceability, and commitment.  
+      
+      Every project we deliver is documented, certified, and verified for quality — from our GST-registered products to our eco-conscious processes.  
+      
+      We believe trust isn’t claimed; it’s earned, project by project.`,
       details: [
         { label: "GST Number", value: "33DHYPS9395N1ZS" },
         { label: "HSN Code", value: "3907 - Epoxy Resins" },
@@ -40,46 +46,49 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
       <section className="relative h-[55vh] flex items-center justify-center text-center overflow-hidden">
         <img
           src="/images/about-hero.jpg"
-          alt="Veera Polymers facility"
+          alt="Veera Polymers workshop"
           className="absolute inset-0 w-full h-full object-cover brightness-75"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0b2b4a]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0b2b4a]/80 via-[#0b2b4a]/50 to-transparent" />
         <motion.div
           className="relative z-10 text-white px-6 max-w-3xl"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
-            About <span className="text-sky-400">Veera Polymers & Chemicals</span>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+            Every Strong Floor
+            <br />
+            <span className="text-sky-400">Starts With a Strong Purpose</span>
           </h1>
           <p className="text-lg text-white/90 leading-relaxed">
-            Engineering durability, safety, and sustainability — one floor at a time.
+            We’re a team of builders, chemists, and dreamers — crafting safe,
+            sustainable, and high-performance flooring for modern India.
           </p>
         </motion.div>
       </section>
 
-      {/* Tabs */}
-      <section className="max-w-6xl mx-auto px-6 py-14">
+      {/* Tabs Section */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
         <div className="flex flex-wrap justify-center gap-3 mb-10">
           {[
-            { id: "vision", label: "Our Vision" },
-            { id: "infrastructure", label: "Infrastructure" },
-            { id: "credibility", label: "Credentials" },
+            { id: "vision", label: "Our Story" },
+            { id: "infrastructure", label: "Our Work" },
+            { id: "credibility", label: "Our Promise" },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-2.5 rounded-full border transition-all font-semibold ${
+              className={`px-6 py-2.5 rounded-full border font-semibold transition-all ${
                 activeTab === tab.id
-                  ? "bg-blue-900 text-white border-blue-900 shadow-md"
-                  : "bg-white text-blue-900 border-blue-200 hover:bg-blue-50"
+                  ? "bg-[#0b2b4a] text-white border-[#0b2b4a] shadow-md"
+                  : "bg-white text-[#0b2b4a] border-gray-200 hover:bg-gray-50"
               }`}
             >
               {tab.label}
@@ -87,7 +96,6 @@ export default function About() {
           ))}
         </div>
 
-        {/* Dynamic Tab Content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -104,18 +112,19 @@ export default function About() {
               className="md:w-1/2 h-64 md:h-auto object-cover"
             />
             <div className="p-8 md:w-1/2 flex flex-col justify-center">
-              <h2 className="text-2xl font-bold text-blue-900 mb-4">
+              <h2 className="text-2xl font-bold text-[#0b2b4a] mb-4">
                 {content[activeTab].title}
               </h2>
               <p className="text-gray-700 leading-relaxed mb-4 whitespace-pre-line">
                 {content[activeTab].text}
               </p>
-
               {activeTab === "credibility" && (
                 <ul className="text-sm text-gray-600 grid sm:grid-cols-2 gap-x-6 mt-4">
                   {content.credibility.details.map((d, i) => (
                     <li key={i} className="border-b py-2">
-                      <span className="font-semibold text-blue-900">{d.label}:</span>{" "}
+                      <span className="font-semibold text-[#0b2b4a]">
+                        {d.label}:
+                      </span>{" "}
                       {d.value}
                     </li>
                   ))}
@@ -126,8 +135,8 @@ export default function About() {
         </AnimatePresence>
       </section>
 
-      {/* 🧩 Team Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      {/* Team Section */}
+      <section className="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-t from-blue-50/60 to-transparent rounded-t-3xl">
         <motion.h2
           className="text-3xl md:text-4xl font-extrabold text-[#0b2b4a] text-center mb-12"
           variants={fadeInUp}
@@ -135,34 +144,34 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          Meet Our Core Team
+          The People Behind the Work
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
-              name: "Rghupathi M",
+              name: "Ragupathi M",
               role: "Founder & Managing Director",
               img: "/images/team1.jpg",
-              bio: "description.",
+              bio: "Ragupathi founded Veera Polymers with a vision to merge craftsmanship and chemistry. A hands-on leader, he believes in quality over quantity and relationships over transactions.",
             },
             {
-              name: "Name",
-              role: "role",
+              name: "Priya K",
+              role: "Operations & Planning",
               img: "/images/team2.jpg",
-              bio: "desc.",
+              bio: "Priya ensures every project runs smoothly — from materials to manpower. She’s the bridge between on-site execution and client satisfaction.",
             },
             {
-              name: "name",
-              role: "role",
+              name: "Karthik S",
+              role: "Quality & Application Head",
               img: "/images/team3.jpg",
-              bio: "desc",
+              bio: "With over a decade of industrial coating experience, Karthik oversees material testing, product improvement, and training of new teams.",
             },
             {
-              name: "name",
-              role: "role",
+              name: "Divya R",
+              role: "Procurement & Logistics",
               img: "/images/team4.jpg",
-              bio: "desc",
+              bio: "Divya manages supplier relations and ensures timely delivery of raw materials, making sure projects stay on schedule every time.",
             },
           ].map((t, i) => (
             <motion.div
@@ -192,13 +201,23 @@ export default function About() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
-        <div className="grid sm:grid-cols-3 gap-6 text-center">
+      {/* Journey / Stats Section */}
+      <section className="max-w-6xl mx-auto px-6 py-20 text-center">
+        <motion.h2
+          className="text-3xl md:text-4xl font-extrabold text-[#0b2b4a] mb-8"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          Our Journey in Numbers
+        </motion.h2>
+
+        <div className="grid sm:grid-cols-3 gap-6">
           {[
             { num: "100+", label: "Industrial Projects Delivered" },
-            { num: "25+", label: "Cities Served Pan-India" },
-            { num: "3", label: "Years of Consistent Growth" },
+            { num: "25+", label: "Cities Served Across India" },
+            { num: "3+", label: "Years of Steady Growth" },
           ].map((s, i) => (
             <motion.div
               key={i}
@@ -209,23 +228,23 @@ export default function About() {
               viewport={{ once: true }}
               className="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-md transition"
             >
-              <h3 className="text-4xl font-extrabold text-blue-900">{s.num}</h3>
+              <h3 className="text-4xl font-extrabold text-sky-700">{s.num}</h3>
               <p className="text-gray-600 mt-1">{s.label}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center mt-14">
           <a
             href="/contact"
-            className="inline-block px-8 py-3 bg-blue-900 text-white font-semibold rounded-full hover:bg-sky-700 transition shadow-md"
+            className="inline-block px-8 py-3 bg-[#0b2b4a] text-white font-semibold rounded-full hover:bg-sky-700 transition shadow-md"
           >
-            Contact Our Experts →
+            Talk to Our Team →
           </a>
         </div>
       </section>
     </div>
   );
 }
+
 

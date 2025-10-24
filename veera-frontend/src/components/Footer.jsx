@@ -16,7 +16,7 @@ export default function Footer() {
             for performance, safety, and long-term durability.
           </p>
           <a
-            href="/brochure/veera_brochure.pdf"
+            href="/brochure/veera-polymer-chemicals(1).pdf"
             download
             className="inline-block mt-4 text-sm font-medium text-sky-300 hover:text-sky-400 transition"
           >
