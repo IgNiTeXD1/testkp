@@ -8,45 +8,40 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 1.08]);
 
-  const fadeUp = {
+  const fade = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
-  const systems = [
+  const services = [
     {
-      t: "Epoxy Flooring Systems",
-      d: "High-strength coatings engineered for heavy-load industries and seamless durability.",
+      title: "Epoxy Flooring Systems",
+      desc: "Heavy-duty seamless floors for industrial, chemical, and automotive applications.",
       img: "/images/epoxy-system.jpg",
     },
     {
-      t: "PU & Hybrid Floors",
-      d: "Flexible, abrasion-resistant coatings ideal for food, pharma, and high-traffic environments.",
+      title: "PU & Hybrid Floors",
+      desc: "Resilient, abrasion-resistant coatings designed for food, pharma, and commercial spaces.",
       img: "/images/pu-floor.jpg",
     },
     {
-      t: "ESD & Conductive Coatings",
-      d: "Static-safe flooring systems for electronics, defense, and precision manufacturing.",
+      title: "ESD & Conductive Coatings",
+      desc: "Static-controlled systems for cleanrooms, electronics, and defense industries.",
       img: "/images/esd-floor.jpg",
+    },
+    {
+      title: "Chemical-Resistant Linings",
+      desc: "Protective resin layers for tanks, drains, and chemical processing zones.",
+      img: "/images/chemical-lining.jpg",
     },
   ];
 
-  const projects = [
-    {
-      img: "/images/plant-bangalore.jpg",
-      h: "Bangalore Electronics Hub",
-      d: "10,000 sq.ft anti-static epoxy system for controlled assembly zones.",
-    },
-    {
-      img: "/images/pharma-floor.jpg",
-      h: "Pharma Cleanroom – Hyderabad",
-      d: "Hygienic PU flooring with antimicrobial sealant and gloss finish.",
-    },
-    {
-      img: "/images/fmcg-warehouse.jpg",
-      h: "FMCG Warehouse – Pune",
-      d: "High-load epoxy floor sustaining 5-ton forklifts under 24x7 cycles.",
-    },
+  const industries = [
+    { name: "Pharmaceutical", icon: "💊" },
+    { name: "Food & Beverage", icon: "🥫" },
+    { name: "Automotive", icon: "🚗" },
+    { name: "Electronics", icon: "💻" },
+    { name: "Warehousing", icon: "🏭" },
   ];
 
   const siteSchema = {
@@ -56,30 +51,28 @@ export default function Home() {
     url: "https://veerapolymers.com",
     logo: "https://veerapolymers.com/images/logo.png",
     description:
-      "Industrial flooring experts specializing in epoxy, PU, and ESD systems for factories, warehouses, and cleanrooms.",
+      "Veera Polymers provides high-performance epoxy, PU, and ESD flooring systems for industrial, commercial, and specialized applications.",
+    sameAs: ["https://www.linkedin.com/company/veerapolymers"],
   };
 
   return (
-    <main className="bg-[#0b2b4a] text-white overflow-x-hidden selection:bg-sky-400/40 selection:text-white">
+    <main className="bg-[#0b2b4a] text-white overflow-x-hidden">
       <Helmet>
-        <title>Veera Polymers | Industrial Epoxy & PU Flooring Experts</title>
+        <title>Veera Polymers | Industrial Epoxy & PU Flooring Solutions</title>
         <meta
           name="description"
-          content="Premium industrial epoxy, PU, and conductive flooring systems engineered for India's leading industries. Built for strength, safety, and sustainability."
+          content="Trusted manufacturer and applicator of epoxy, PU, and ESD flooring systems across pharma, food, and industrial sectors in India."
         />
         <meta
           name="keywords"
-          content="epoxy flooring, PU flooring, ESD flooring, industrial floor coatings, factory floor, Veera Polymers"
+          content="epoxy flooring, PU flooring, ESD coating, industrial floors, resin flooring, Veera Polymers"
         />
         <link rel="canonical" href="https://veerapolymers.com" />
         <script type="application/ld+json">{JSON.stringify(siteSchema)}</script>
       </Helmet>
 
       {/* HERO */}
-      <section
-        className="relative h-[100vh] flex items-center justify-center"
-        aria-label="Hero section"
-      >
+      <section className="relative h-[100vh] flex flex-col items-center justify-center text-center overflow-hidden">
         <motion.img
           src="/images/hero-floor.jpg"
           alt="Industrial epoxy floor"
@@ -90,28 +83,28 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0b2b4a] via-[#0b2b4a]/70 to-transparent" />
 
         <motion.div
-          variants={fadeUp}
+          variants={fade}
           initial="hidden"
-          animate="visible"
-          className="relative z-10 backdrop-blur-sm bg-white/10 border border-white/20 rounded-3xl p-10 text-center max-w-3xl shadow-xl"
+          animate="show"
+          className="relative z-10 backdrop-blur-sm bg-white/10 border border-white/20 rounded-3xl p-10 max-w-3xl shadow-xl"
         >
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4 uppercase tracking-tight">
-            <span className="text-sky-400">Precision</span> in Every Layer
+            Excellence in <span className="text-sky-400">Resin Flooring</span>
           </h1>
-          <p className="text-white/80 text-lg mb-8 leading-relaxed">
-            Engineered flooring systems that power India’s leading industries — designed for strength,
-            safety, and sustainability.
+          <p className="text-white/80 text-lg mb-8">
+            Certified applicators delivering seamless, durable, and chemical-resistant surfaces since{" "}
+            <span className="font-semibold text-sky-300">2002</span>.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/products"
-              className="px-8 py-3 rounded-full bg-sky-500 hover:bg-sky-600 font-semibold shadow-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              className="px-8 py-3 bg-sky-500 hover:bg-sky-600 rounded-full font-semibold shadow-md transition"
             >
-              Explore Products
+              Explore Systems
             </Link>
             <Link
               to="/photos"
-              className="px-8 py-3 rounded-full border border-white/60 hover:bg-white/10 transition font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              className="px-8 py-3 border border-white/60 hover:bg-white/10 rounded-full transition font-semibold"
             >
               View Projects
             </Link>
@@ -124,71 +117,63 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <motion.img
             src="/images/factory-floor.jpg"
-            alt="Factory process"
+            alt="Factory floor application"
             className="rounded-2xl shadow-lg object-cover w-full h-80 md:h-[420px]"
-            variants={fadeUp}
+            variants={fade}
             initial="hidden"
-            whileInView="visible"
+            whileInView="show"
             viewport={{ once: true }}
             loading="lazy"
           />
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
+          <motion.div variants={fade} initial="hidden" whileInView="show" viewport={{ once: true }}>
             <h2 className="text-3xl md:text-4xl font-bold text-sky-400 mb-4">
-              Building India’s Future, One Floor at a Time
+              Two Decades of Polymer Excellence
             </h2>
             <p className="text-white/80 leading-relaxed text-[17px]">
-              From pharmaceutical labs to aerospace hubs, Veera Polymers has delivered over{" "}
-              <span className="text-sky-300 font-semibold">100,000 sq.ft</span> of flooring excellence.
-              We combine design precision, advanced resin chemistry, and rigorous on-site supervision —
-              ensuring performance that lasts.
+              With 20+ years of expertise in industrial resin flooring, Veera Polymers has executed over{" "}
+              <span className="font-semibold text-sky-300">500+ projects</span> nationwide — from
+              pharmaceutical facilities to heavy manufacturing units.
             </p>
-            <Link
-              to="/about"
-              className="inline-block mt-6 text-sky-400 hover:underline font-medium"
-            >
-              Discover Our Story →
-            </Link>
+            <div className="flex gap-4 mt-6 flex-wrap">
+              <div className="bg-white/10 rounded-lg px-4 py-2 text-sm font-medium">
+                ISO 9001:2015 Certified
+              </div>
+              <div className="bg-white/10 rounded-lg px-4 py-2 text-sm font-medium">
+                PAN India Execution
+              </div>
+              <div className="bg-white/10 rounded-lg px-4 py-2 text-sm font-medium">
+                100% In-house Team
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* SIGNATURE SYSTEMS */}
+      {/* SERVICES */}
       <section className="bg-[#f8fafc] text-[#0b2b4a] py-24">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-12">
-            Our Signature Systems
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {systems.map((c, i) => (
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-12">Our Core Services</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((s, i) => (
               <motion.article
-                key={c.t}
-                variants={fadeUp}
+                key={s.title}
+                variants={fade}
                 initial="hidden"
-                whileInView="visible"
+                whileInView="show"
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -6, scale: 1.02 }}
-                className="bg-white rounded-2xl shadow-sm hover:shadow-xl overflow-hidden flex flex-col border border-gray-100 transition"
+                className="bg-white rounded-2xl shadow-sm hover:shadow-xl overflow-hidden border border-gray-100 transition flex flex-col"
               >
-                <img
-                  src={c.img}
-                  alt={c.t}
-                  className="h-56 object-cover w-full"
-                  loading="lazy"
-                />
+                <img src={s.img} alt={s.title} className="h-48 w-full object-cover" loading="lazy" />
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold mb-2">{c.t}</h3>
-                  <p className="text-gray-600 flex-1 text-[15px]">{c.d}</p>
+                  <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                  <p className="text-gray-600 text-sm flex-1">{s.desc}</p>
                   <Link
                     to="/products"
-                    className="text-sky-700 mt-4 font-semibold hover:underline"
+                    className="text-sky-700 mt-4 font-semibold hover:underline text-sm"
                   >
-                    Learn more →
+                    Learn More →
                   </Link>
                 </div>
               </motion.article>
@@ -197,120 +182,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESS STRIP */}
-      <section className="bg-[#0b2b4a] text-white py-24 relative overflow-hidden">
-        <motion.div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(56,189,248,0.15),transparent_70%)]"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        />
-        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-14 text-sky-400">
-            The Science Behind Strength
-          </h2>
-
-          <div className="relative flex flex-col md:flex-row md:justify-between items-center md:before:absolute md:before:top-1/2 md:before:left-0 md:before:w-full md:before:h-[2px] md:before:bg-white/15">
-            {[
-              {
-                n: "01",
-                h: "Consult & Design",
-                p: "We study your environment, loads, and safety standards to define optimal materials.",
-              },
-              {
-                n: "02",
-                h: "Implement & Supervise",
-                p: "Our field teams execute with precision and daily quality checks at every layer.",
-              },
-              {
-                n: "03",
-                h: "Validate & Support",
-                p: "We inspect, document, and provide post-installation maintenance guidance.",
-              },
-            ].map((step, i) => (
+      {/* INDUSTRIES */}
+      <section className="bg-[#0b2b4a] py-20 border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <motion.h2
+            variants={fade}
+            initial="hidden"
+            whileInView="show"
+            className="text-3xl md:text-4xl font-bold text-sky-400 mb-10"
+          >
+            Industries We Serve
+          </motion.h2>
+          <div className="flex flex-wrap justify-center gap-6">
+            {industries.map((ind, i) => (
               <motion.div
-                key={step.n}
-                variants={fadeUp}
+                key={i}
+                variants={fade}
                 initial="hidden"
-                whileInView="visible"
+                whileInView="show"
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="relative z-10 bg-white/5 border border-white/20 rounded-full w-52 h-52 flex flex-col justify-center items-center shadow-lg backdrop-blur-sm p-6 mx-auto my-10 md:my-0"
+                className="bg-white/10 rounded-xl px-8 py-4 text-white/90 hover:bg-white/20 transition shadow-sm backdrop-blur-sm"
               >
-                <span className="text-4xl font-extrabold text-sky-400 mb-2">
-                  {step.n}
-                </span>
-                <h3 className="text-lg font-semibold">{step.h}</h3>
-                <p className="text-sm text-white/70 mt-2 text-center">{step.p}</p>
+                <span className="text-2xl mr-2">{ind.icon}</span> {ind.name}
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* RECENT PROJECTS */}
-      <section className="bg-[#f8fafc] text-[#0b2b4a] py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-center mb-10 flex-wrap">
-            <h2 className="text-3xl font-extrabold">Recent Installations</h2>
-            <Link
-              to="/photos"
-              className="text-sky-700 hover:underline font-medium mt-3 sm:mt-0"
-            >
-              View Gallery →
-            </Link>
-          </div>
-
-          <motion.div
-            drag="x"
-            dragConstraints={{ left: -400, right: 0 }}
-            className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
-          >
-            {projects.map((n, i) => (
-              <motion.article
-                key={i}
-                whileHover={{ y: -5 }}
-                transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                className="min-w-[280px] bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition snap-start"
-              >
-                <img src={n.img} alt={n.h} className="h-48 w-full object-cover" loading="lazy" />
-                <div className="p-6">
-                  <h3 className="font-semibold text-lg mb-1">{n.h}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{n.d}</p>
-                </div>
-              </motion.article>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="bg-[#0b2b4a] text-center text-white py-24">
+      <section className="bg-gradient-to-r from-sky-600 to-sky-400 text-center text-white py-20">
         <motion.h2
-          variants={fadeUp}
+          variants={fade}
           initial="hidden"
-          whileInView="visible"
-          className="text-3xl md:text-4xl font-bold mb-3"
+          whileInView="show"
+          className="text-3xl md:text-4xl font-extrabold mb-4"
         >
-          Ready to Reinforce Your Space?
+          Ready to Reinforce Your Facility?
         </motion.h2>
-        <p className="text-white/80 mb-8 text-lg max-w-2xl mx-auto">
-          Connect with our technical experts for custom recommendations and free site assessments.
+        <p className="text-white/90 mb-8 text-lg max-w-2xl mx-auto">
+          Schedule a free consultation and site assessment with our engineering team.
         </p>
         <div className="flex justify-center gap-4 flex-wrap">
           <Link
             to="/contact"
-            className="px-8 py-3 bg-sky-500 hover:bg-sky-600 rounded-full font-semibold transition shadow-md"
+            className="px-8 py-3 bg-white text-sky-700 hover:bg-sky-50 rounded-full font-semibold transition shadow-md"
           >
-            Contact Us
+            Get Quote
           </Link>
-          <a
-            href="/brochure/veera-polymer-chemicals(1).pdf"
-            download
+          <Link
+            to="/about"
             className="px-8 py-3 border border-white/70 hover:bg-white/10 rounded-full transition font-semibold"
           >
-            Download Brochure
-          </a>
+            Learn More
+          </Link>
         </div>
       </section>
     </main>
